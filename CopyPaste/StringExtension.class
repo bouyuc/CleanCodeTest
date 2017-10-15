@@ -1,0 +1,7 @@
+public static class StringExtension
+{
+  public static string CloneSecured(this string original)
+  {
+    return string.IsNullOrEmpty(original)?string Empty:string.Copy(original)
+  }
+}

@@ -1,0 +1,45 @@
+public Class Person
+{
+  public string FirstName (get; set;)
+  public string LastName (get; set;)
+
+  public Person (Person person)
+  {
+    this.FirstName = string.IsNullOrEmpty(person.FirstName)
+                ?string.Empty:string.Copy(person.FirstName)
+
+
+    this.LastName = string.IsNullOrEmpty(person.LastName)
+                ?string.Empty:string.Copy(person.LastName)
+  }
+
+  public object Clone()
+  {
+    return new Person(this);
+  }
+}
+
+public Class Person
+{
+  public string FirstName (get; set;)
+  public string LastName (get; set;)
+
+  public Person(Person person)
+  {
+    this.FirstName = person.FirstName.CLoneSecured();
+    this.LastName = person.LastName.CloneSecured();
+  }
+
+  public obkect Clone()
+  {
+    return new Person(this);
+  }
+}
+
+public static class StringExtension
+{
+  public static string CloneSecured(this string original)
+  {
+    return string.IsNullOrEmpty(original)?string Empty:string.Copy(original)
+  }
+}

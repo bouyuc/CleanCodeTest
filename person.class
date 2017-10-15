@@ -1,0 +1,20 @@
+public Class Person
+{
+  public string FirstName (get; set;)
+  public string LastName (get; set;)
+
+  public Person (Person person)
+  {
+    this.FirstName = string.IsNullOrEmpty(person.FirstName)
+                ?string.Empty:string.Copy(person.FirstName)
+
+
+    this.LastName = string.IsNullOrEmpty(person.LastName)
+                ?string.Empty:string.Copy(person.LastName)
+  }
+
+  public object Clone()
+  {
+    return new Person(this);
+  }
+}

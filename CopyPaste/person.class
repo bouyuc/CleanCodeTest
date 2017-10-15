@@ -1,0 +1,17 @@
+
+public Class Person
+{
+  public string FirstName (get; set;)
+  public string LastName (get; set;)
+
+  public Person(Person person)
+  {
+    this.FirstName = person.FirstName.CLoneSecured();
+    this.LastName = person.LastName.CloneSecured();
+  }
+
+  public obkect Clone()
+  {
+    return new Person(this);
+  }
+}
